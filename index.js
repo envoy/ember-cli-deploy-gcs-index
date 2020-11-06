@@ -34,6 +34,7 @@ module.exports = {
       upload: function(/* context */) {
         var projectId      = this.readConfig('projectId');
         var keyFilename    = this.readConfig('keyFilename');
+        var credentials    = this.readConfig('credentials');
         var bucket         = this.readConfig('bucket');
         var prefix         = this.readConfig('prefix');
         var acl            = this.readConfig('acl');
@@ -60,6 +61,7 @@ module.exports = {
         var gcs = new this.GCS({
           plugin: this,
           keyFilename: keyFilename,
+          credentials: credentials,
           projectId: projectId
         });
         return gcs.upload(options);
@@ -68,6 +70,7 @@ module.exports = {
       activate: function(/* context */) {
         var projectId      = this.readConfig('projectId');
         var keyFilename    = this.readConfig('keyFilename');
+        var credentials    = this.readConfig('credentials');
         var bucket      = this.readConfig('bucket');
         var prefix      = this.readConfig('prefix');
         var acl         = this.readConfig('acl');
@@ -87,6 +90,7 @@ module.exports = {
         var gcs = new this.GCS({
           plugin: this,
           keyFilename: keyFilename,
+          credentials: credentials,
           projectId: projectId
         });
         return gcs.activate(options);
@@ -113,6 +117,7 @@ module.exports = {
       _list: function(/* context */) {
         var projectId      = this.readConfig('projectId');
         var keyFilename    = this.readConfig('keyFilename');
+        var credentials    = this.readConfig('credentials');
         var bucket      = this.readConfig('bucket');
         var prefix      = this.readConfig('prefix');
         var filePattern = this.readConfig('filePattern');
@@ -126,6 +131,7 @@ module.exports = {
         var gcs = new this.GCS({
           plugin: this,
           keyFilename: keyFilename,
+          credentials: credentials,
           projectId: projectId
         });
         return gcs.fetchRevisions(options);
