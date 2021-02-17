@@ -15,6 +15,7 @@
   "repository": "https://github.com/envoy/ember-cli-deploy-gcs-index",
   "scripts": {
     "build": "ember build",
+    "changelog": "auto-changelog --template changelog.template --unreleased-only --prepend --load-github-issue-data --github-cache-dir .changelog",
     "start": "ember server",
     "test": "ember try:each"
   },
@@ -26,6 +27,7 @@
     "mime-types": "^2.1.9"
   },
   "devDependencies": {
+    "auto-changelog": "github:mansona/auto-changelog#epic",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~2.16.2",
