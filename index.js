@@ -26,7 +26,8 @@ module.exports = {
         gzippedFiles: function(context) {
           return context.gzippedFiles || [];
         },
-        allowOverwrite: false
+        allowOverwrite: false,
+        makePublic: true
       },
 
       requiredConfig: ['bucket', 'projectId'],
@@ -73,13 +74,15 @@ module.exports = {
         var acl         = this.readConfig('acl');
         var revisionKey = this.readConfig('revisionKey');
         var filePattern = this.readConfig('filePattern');
+        var makePublic  = this.readConfig('makePublic');
 
         var options = {
           bucket: bucket,
           prefix: prefix,
           acl: acl,
           filePattern: filePattern,
-          revisionKey: revisionKey
+          revisionKey: revisionKey,
+          makePublic: makePublic
         };
 
         this.log('preparing to activate `' + revisionKey + '`', { verbose: true });
