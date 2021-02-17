@@ -113,6 +113,12 @@ A flag to specify whether the revision should be overwritten if it already exist
 
 *Default:* `false`
 
+### makePublic
+
+A flag to make the `index.html` file public.
+
+*Default:* `true`
+
 ### How do I activate a revision?
 
 A user can activate a revision by either:
